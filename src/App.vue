@@ -36,8 +36,17 @@ export default {
       .flex_cor();
       cursor:  url(./assets/spaceman.png) 2 2, pointer;
 
+      @media (max-width: @mobil-landscape) and (orientation: landscape) {
+        cursor: none;
+      }
+
+      @media (max-width: @tablet) {
+        cursor: none;
+      }
+
       @media (max-width: @mobil) {
         background-position: left;
+        cursor: none;
       }
     }
   }
