@@ -1,26 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="App_tracker" @mousemove="bodyMove">
+    <Tracker_Uni tracker='tracker'/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Tracker_Uni from './components/Tracker.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Tracker_Uni
+  },
+  methods: {
+    bodyMove: function(e) {
+      var tracker = document.querySelector(".tracker");
+
+      tracker.style.left = `${e.clientX}px`;
+      tracker.style.top = `${e.clientY}px`;
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less">
+
+  @import './styles/variables';
+
+  .App {
+    &_tracker {
+      background-image: url(./assets/space_1.jpg);
+      .bg_img();
+      height: 100vh;
+      overflow-x: hidden;
+      .flex_cor();
+
+      @media (max-width: @mobil) {
+        background-position: left;
+      }
+    }
+  }
 </style>
