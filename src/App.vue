@@ -34,6 +34,7 @@ export default {
       height: 100vh;
       overflow-x: hidden;
       .flex_cor();
+      cursor:  url(./assets/spaceman.png) 2 2, pointer;
 
       @media (max-width: @mobil) {
         background-position: left;
