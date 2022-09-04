@@ -1,6 +1,6 @@
 <template>
   <div class="App_tracker" @mousemove="bodyMove">
-    <Tracker_Uni tracker='tracker'/>
+    <Tracker_Uni tracker='tracker' v-bind:style="{'left': x, 'top': y}" />
   </div>
 </template>
 
@@ -10,14 +10,18 @@ import Tracker_Uni from './components/Tracker.vue'
 export default {
   name: 'App',
   components: {
-    Tracker_Uni
+    Tracker_Uni,
+  },
+  data() {
+    return {
+      x: 50,
+      y: 50
+    }
   },
   methods: {
     bodyMove: function(e) {
-      var tracker = document.querySelector(".tracker");
-
-      tracker.style.left = `${e.clientX}px`;
-      tracker.style.top = `${e.clientY}px`;
+      this.x = `${e.clientX}px`;
+      this.y = `${e.clientY}px`;
     }
   }
 }

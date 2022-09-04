@@ -38,12 +38,13 @@
 export default {
   name: 'Tracker_Uni',
   props: {
-    tracker: String
+    tracker: String,
   },
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style lang="less">
 
   @import '../styles/variables';
